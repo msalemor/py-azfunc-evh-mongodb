@@ -72,3 +72,7 @@ CONNECTION_STRING=<COSMOS_MONGODB_CONNECTION_STRING>
 DB_NAME=<MONGO_DB_NAME>
 COLLECTION_NAME=<MONGO_COLLECTION_NAME>
 ```
+
+## Expected Logs
+
+![A view of the logs in the Azure Portal](images/logs.png)

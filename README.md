@@ -37,7 +37,7 @@ Recommended:
 
 - `virtualenv` or `pyenv`
 
-### Debuging
+### Debugging
 
 - Create a `local.settings.json` file:
 
@@ -51,6 +51,14 @@ Recommended:
     "EVENTHUB_STR": "<FULL_SEND_POLICY_CONNECTION_STRING>"
   }
 }
+```
+
+- Create a `.env` file and add the following key/value pairs:
+
+```
+MONGODB_CONNECTION_STRING=<COSMOS_MONGODB_CONNECTION_STRING>
+DB_NAME=<MONGO_DB_NAME>
+COLLECTION_NAME=<MONGO_COLLECTION_NAME>
 ```
 
 - From VS Code, start the storage emulator:

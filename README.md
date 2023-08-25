@@ -1,4 +1,4 @@
-# python-evh-mongo-func
+# Python Azure Functions<br>Event Hubs to MongoDB
 
 A Python Azure function that triggers on Azure EventHubs messages and saves them to Cosmos MongoDB.
 

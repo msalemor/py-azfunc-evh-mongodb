@@ -15,7 +15,7 @@ A Python Azure function that triggers on Azure EventHubs messages and saves them
 
 ## Azure Function Creation
 
-Create a function:
+Create an Azure function:
 
 - <https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python?pivots=python-mode-decorators>
 

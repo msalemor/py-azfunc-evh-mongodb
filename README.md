@@ -21,8 +21,8 @@ Create a function:
 
 ### Azure Functions V1 vs V2
 
-- V1 functions depended on the function.json file for added configuration
-- V2 functions rely on the function decorator (see cardinality below)
+- V1 functions depended on the `function.json` file for added configuration like cardinality.
+- V2 functions rely on the signature decorator (see cardinality below).
 
 ### Cardinality
 

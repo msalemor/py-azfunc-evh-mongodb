@@ -56,6 +56,42 @@ def eventhub_trigger(event: func.EventHubEvent):
     process_message(product,logging)
 ```
 
+### Specifically for the Event Hubs Azure Function Trigger
+
+Generally, the Event Hubs message includes:
+
+- Body : string | json | bytes
+- Tigger_metadata : any
+- Enquieued_time : datetime
+- Partition_key : str
+- Sequence_number : int
+- Offset : str
+- Iothub_metadata : any
+
+Source code:
+- https://github.com/Azure/azure-functions-python-library/blob/dev/azure/functions/eventhub.py
+
+```python
+if data.type in ['string', 'json']:
+    body = data.value.encode('utf-8')
+
+elif data.type == 'bytes':
+    body = data.value
+
+return _eventhub.EventHubEvent(
+    body=body,
+    trigger_metadata=trigger_metadata,
+    enqueued_time=cls._parse_datetime_metadata(
+        trigger_metadata, 'EnqueuedTimeUtc'),
+    partition_key=cls._decode_trigger_metadata_field(
+        trigger_metadata, 'PartitionKey', python_type=str),
+    sequence_number=cls._decode_trigger_metadata_field(
+        trigger_metadata, 'SequenceNumber', python_type=int),
+    offset=cls._decode_trigger_metadata_field(
+        trigger_metadata, 'Offset', python_type=str),
+    iothub_metadata=cls._decode_iothub_metadata(trigger_metadata)
+```
+
 ### Azure Function Python Support
 
 - Max: 3.10

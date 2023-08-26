@@ -5,11 +5,11 @@ A Python Azure function that triggers on Azure EventHubs messages and saves them
 ## Requirements
 
 - Linux Azure Function
-- Eventhub with a hub
+- Azure Event hubs
   - Create a hub
   - Create a listening policy
   - Create a sending policy
-  - Record the namespace and the keys for each policy
+  - Record the full connection string and the keys for each policy
 - CosmosDB MongoDB
   - Record the connection string
 

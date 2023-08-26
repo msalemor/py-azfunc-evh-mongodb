@@ -37,8 +37,7 @@ Some Azure functions, like the one for Event Hubs, support cardinality meaning t
 def eventhub_trigger(events: List[func.EventHubEvent]):
     for event in events:
         message_body: str = event.get_body().decode('utf-8')
-        logging.info(
-            'Python EventHub trigger processed an event: %s', message_body)
+        logging.info('Python EventHub trigger processed an event: %s', message_body)
         product = json.loads(message_body)
         process_message(product, logging)
 ```

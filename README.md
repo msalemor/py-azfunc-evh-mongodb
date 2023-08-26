@@ -19,6 +19,38 @@ Create a function:
 
 - <https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python?pivots=python-mode-decorators>
 
+### Cardinality
+
+Some Azure functions, like the one for EventHubs, supports cardinality meaning that the function can process one message or many messages in one invocation. The configurations looks as follows:
+
+- Many
+
+```Python
+@app.event_hub_message_trigger(arg_name="events", event_hub_name="hub1",
+                               connection="EVENTHUB_STR", cardinality="many")
+def eventhub_trigger(events: List[func.EventHubEvent]):
+    for event in events:
+        message_body: str = event.get_body().decode('utf-8')
+        logging.info(
+            'Python EventHub trigger processed an event: %s', message_body)
+        product = json.loads(message_body)
+        process_message(product, logging)
+```
+
+- One
+
+```Python
+@app.event_hub_message_trigger(arg_name="event", event_hub_name="hub1",
+                               connection="EVENTHUB_STR") 
+def eventhub_trigger(event: func.EventHubEvent):
+    # Get the string message from hub
+    message_body : str = event.get_body().decode('utf-8')
+    logging.info('Python EventHub trigger processed an event: %s',message_body)
+    product = json.loads(msg)
+    process_message(product,logging)
+
+```
+
 ### Azure Function Python Support
 
 - Max: 3.10

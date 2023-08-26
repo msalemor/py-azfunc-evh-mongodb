@@ -5,3 +5,4 @@
 azure-functions
 pymongo
 python-dotenv
+motor

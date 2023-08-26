@@ -28,7 +28,7 @@ async def run():
         # Create a batch.
         event_data_batch = await producer.create_batch()
 
-      # Add events to the batch.
+        # Add events to the batch.
         product = {
             "category": "gear-surf-surfboards",
             "name": "Yamba Surfboard-{}".format(randint(50, 5000)),

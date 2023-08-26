@@ -94,7 +94,7 @@ return _eventhub.EventHubEvent(
     iothub_metadata=cls._decode_iothub_metadata(trigger_metadata)
 ```
 
-### Azure Function Python Support
+### Azure Function V2 Python Support
 
 - Max: 3.10
 - Min: 3.6

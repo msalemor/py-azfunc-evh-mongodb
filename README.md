@@ -89,6 +89,8 @@ Recommended:
 }
 ```
 
+**Note:** Here the Azure Function is configured to use the local storage emulator by setting the `AzureWebJobsStorage` to `UseDevelopmentStorage=true`.
+
 - Create a `.env` file and add the following key/value pairs:
 
 ```
@@ -98,7 +100,7 @@ COLLECTION_NAME=<MONGO_COLLECTION_NAME>
 ```
 
 - Start the storage emulator
-  -  From VS Code type, `F1` and look for `azurite: Start`
+  -  From VS Code type, `F1` and look and click on `azurite: Start`
 - If you created the Python project from VS Code, it should be configured for you to debug
 - From VS Code press: `F5`
 

@@ -96,6 +96,7 @@ return _eventhub.EventHubEvent(
 
 ### Azure Function V2 Python Support
 
+- Preview: 3.11 (08/26/2023)
 - Max: 3.10
 - Min: 3.6
 

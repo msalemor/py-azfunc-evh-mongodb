@@ -26,11 +26,12 @@ Create a function:
 
 ### Cardinality
 
-Some Azure functions, like the one for Event Hubs, support cardinality meaning that the function can process one message at the or many messages in one invocation. The configurations looks as follows:
+Some Azure functions, like the one for Event Hubs, support cardinality meaning that the function can process one message at the or many messages in one invocation. The configurations look as follows:
 
 - Many
 
 ```Python
+# Azure Function V2 with cardinality many
 @app.event_hub_message_trigger(arg_name="events", event_hub_name="hub1",
                                connection="EVENTHUB_STR", cardinality="many")
 def eventhub_trigger(events: List[func.EventHubEvent]):
@@ -45,6 +46,7 @@ def eventhub_trigger(events: List[func.EventHubEvent]):
 - One
 
 ```Python
+# Azure Function V2 with cardinality one, the default
 @app.event_hub_message_trigger(arg_name="event", event_hub_name="hub1",
                                connection="EVENTHUB_STR") 
 def eventhub_trigger(event: func.EventHubEvent):

@@ -1,10 +1,10 @@
-# Python Azure Functions (V2)<br>Event Hubs Trigger to ComosDB/MongoDB
+# Python Azure Functions (V2)<br>Event Hubs message trigger where the event is written to MongoDB
 
 A Python Azure function that triggers on Azure EventHubs messages and saves them to Cosmos MongoDB.
 
 ## Requirements
 
-- Linux Azure Function
+- Python code Linux Azure function
 - Azure Event hubs
   - Create a hub
   - Create a listening policy
@@ -60,15 +60,17 @@ def eventhub_trigger(event: func.EventHubEvent):
 
 Generally, the Event Hubs message includes:
 
-- Body : string | json | bytes
-- Tigger_metadata : any
-- Enquieued_time : datetime
-- Partition_key : str
-- Sequence_number : int
-- Offset : str
-- Iothub_metadata : any
+```text
+Body : string | json | bytes
+Trigger_metadata : any
+Enqueued_time : datetime
+Partition_key : str
+Sequence_number : int
+Offset : str
+Iothub_metadata : any
+```
 
-Source code:
+Event Hubs - Azure Functions Source code Reference:
 - https://github.com/Azure/azure-functions-python-library/blob/dev/azure/functions/eventhub.py
 
 ```python

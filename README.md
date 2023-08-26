@@ -26,7 +26,7 @@ Create a function:
 
 ### Cardinality
 
-Some Azure functions, like the one for Event Hubs, support cardinality meaning that the function can process one message at the or many messages in one invocation. The configurations look as follows:
+Some Azure functions, like the one for Event Hubs, support cardinality meaning that the function can process one message at a time or many messages in one invocation. The configurations look as follows:
 
 - Many
 

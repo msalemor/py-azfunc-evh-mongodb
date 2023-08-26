@@ -19,9 +19,14 @@ Create a function:
 
 - <https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python?pivots=python-mode-decorators>
 
+### Azure Functions V1 vs V2
+
+- V1 functions depended on the function.json file for added configuration
+- V2 functions rely on the function decorator (see cardinality below)
+
 ### Cardinality
 
-Some Azure functions, like the one for EventHubs, supports cardinality meaning that the function can process one message or many messages in one invocation. The configurations looks as follows:
+Some Azure functions, like the one for Event Hubs, support cardinality meaning that the function can process one message at the or many messages in one invocation. The configurations looks as follows:
 
 - Many
 
@@ -48,7 +53,6 @@ def eventhub_trigger(event: func.EventHubEvent):
     logging.info('Python EventHub trigger processed an event: %s',message_body)
     product = json.loads(msg)
     process_message(product,logging)
-
 ```
 
 ### Azure Function Python Support

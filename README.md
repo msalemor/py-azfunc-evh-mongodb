@@ -61,13 +61,13 @@ def eventhub_trigger(event: func.EventHubEvent):
 Generally, the Event Hubs message includes:
 
 ```text
-Body : string | json | bytes
-Trigger_metadata : any
-Enqueued_time : datetime
-Partition_key : str
-Sequence_number : int
-Offset : str
-Iothub_metadata : any
+body : string | json | bytes
+trigger_metadata : any
+enqueued_time : datetime
+partition_key : str
+sequence_number : int
+offset : str
+iothub_metadata : any
 ```
 
 Event Hubs - Azure Functions Source code Reference:

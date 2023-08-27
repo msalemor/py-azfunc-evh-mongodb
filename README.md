@@ -1,4 +1,4 @@
-# Python Azure Functions (V2)<br>Event Hubs message trigger where the event is written to MongoDB
+# Python Azure Functions (V2)<br>Writes Event Hubs messages to MongoDB
 
 A Python Azure function that triggers when Azure Event Hubs messages arrive and saves them to Cosmos MongoDB.
 

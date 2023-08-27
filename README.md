@@ -1,10 +1,12 @@
 # Python Azure Functions (V2)<br>Event Hubs message trigger where the event is written to MongoDB
 
-A Python Azure function that triggers on Azure EventHubs messages and saves them to Cosmos MongoDB.
+A Python Azure function that triggers when Azure Event Hubs messages arrive and saves them to Cosmos MongoDB.
 
-## Requirements
+## Required Azure Services
 
-- Python code Linux Azure function
+- Azure Function - Python code
+- Storage account
+- Application Insights
 - Azure Event hubs
   - Create a hub
   - Create a listening policy
@@ -13,11 +15,11 @@ A Python Azure function that triggers on Azure EventHubs messages and saves them
 - CosmosDB MongoDB
   - Record the connection string
 
-## Azure Function Creation
+## VS Code Azure Function Creation
 
 Create an Azure function:
 
-- <https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python?pivots=python-mode-decorators>
+- https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python?pivots=python-mode-decorators
 
 ### Azure Functions V1 vs V2
 
@@ -102,7 +104,7 @@ return _eventhub.EventHubEvent(
 
 ## Local Development & Debugging
 
-Environment:
+Development environment:
 
 - VS Code
 - VS Code Azure Function App extension
@@ -112,7 +114,7 @@ Recommended:
 
 - `virtualenv` or `pyenv`
 
-### Debugging
+### Settings for debugging
 
 - Create a `local.settings.json` file:
 
@@ -137,6 +139,7 @@ MONGODB_CONNECTION_STRING=<COSMOS_MONGODB_CONNECTION_STRING>
 DB_NAME=<MONGO_DB_NAME>
 COLLECTION_NAME=<MONGO_COLLECTION_NAME>
 ```
+### Debugging
 
 - Start the storage emulator
   -  From VS Code type, `F1` and look and click on `azurite: Start`
